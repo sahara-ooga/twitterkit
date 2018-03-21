@@ -13,6 +13,12 @@
 		10278BC8206231950013AACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10278BC7206231950013AACD /* Assets.xcassets */; };
 		10278BCB206231950013AACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10278BC9206231950013AACD /* LaunchScreen.storyboard */; };
 		10278BD6206231950013AACD /* twitterkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BD5206231950013AACD /* twitterkitTests.swift */; };
+		10278BE320626FF50013AACD /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BE220626FF50013AACD /* DataConvertible.swift */; };
+		10278BE5206270140013AACD /* TwitterAPICredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BE4206270140013AACD /* TwitterAPICredential.swift */; };
+		10278BE8206270480013AACD /* FileOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BE7206270480013AACD /* FileOrganizer.swift */; };
+		10278BEE206271470013AACD /* TKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BED206271470013AACD /* TKError.swift */; };
+		10278BF0206271CE0013AACD /* loadCredentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BEF206271CE0013AACD /* loadCredentialTests.swift */; };
+		10278BF2206272080013AACD /* credential.json in Resources */ = {isa = PBXBuildFile; fileRef = 10278BF1206272080013AACD /* credential.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		10278BD1206231950013AACD /* twitterkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twitterkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10278BD5206231950013AACD /* twitterkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twitterkitTests.swift; sourceTree = "<group>"; };
 		10278BD7206231950013AACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10278BE220626FF50013AACD /* DataConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConvertible.swift; sourceTree = "<group>"; };
+		10278BE4206270140013AACD /* TwitterAPICredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPICredential.swift; sourceTree = "<group>"; };
+		10278BE7206270480013AACD /* FileOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOrganizer.swift; sourceTree = "<group>"; };
+		10278BED206271470013AACD /* TKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKError.swift; sourceTree = "<group>"; };
+		10278BEF206271CE0013AACD /* loadCredentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadCredentialTests.swift; sourceTree = "<group>"; };
+		10278BF1206272080013AACD /* credential.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credential.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +89,13 @@
 		10278BBF206231950013AACD /* twitterkit */ = {
 			isa = PBXGroup;
 			children = (
+				10278BEC206271260013AACD /* Error */,
+				10278BE6206270270013AACD /* Utils */,
+				10278BE020626FB00013AACD /* Models */,
 				10278BC0206231950013AACD /* AppDelegate.swift */,
-				10278BC2206231950013AACD /* ViewController.swift */,
-				10278BC4206231950013AACD /* Main.storyboard */,
-				10278BC7206231950013AACD /* Assets.xcassets */,
-				10278BC9206231950013AACD /* LaunchScreen.storyboard */,
-				10278BCC206231950013AACD /* Info.plist */,
+				10278BEB206270D40013AACD /* View・VC */,
+				10278BEA206270A70013AACD /* Resources */,
+				10278BE92062706F0013AACD /* Setting Files */,
 			);
 			path = twitterkit;
 			sourceTree = "<group>";
@@ -92,8 +105,69 @@
 			children = (
 				10278BD5206231950013AACD /* twitterkitTests.swift */,
 				10278BD7206231950013AACD /* Info.plist */,
+				10278BEF206271CE0013AACD /* loadCredentialTests.swift */,
 			);
 			path = twitterkitTests;
+			sourceTree = "<group>";
+		};
+		10278BE020626FB00013AACD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10278BE220626FF50013AACD /* DataConvertible.swift */,
+				10278BE120626FBD0013AACD /* Credential */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		10278BE120626FBD0013AACD /* Credential */ = {
+			isa = PBXGroup;
+			children = (
+				10278BE4206270140013AACD /* TwitterAPICredential.swift */,
+			);
+			path = Credential;
+			sourceTree = "<group>";
+		};
+		10278BE6206270270013AACD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10278BE7206270480013AACD /* FileOrganizer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		10278BE92062706F0013AACD /* Setting Files */ = {
+			isa = PBXGroup;
+			children = (
+				10278BCC206231950013AACD /* Info.plist */,
+			);
+			name = "Setting Files";
+			sourceTree = "<group>";
+		};
+		10278BEA206270A70013AACD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10278BF1206272080013AACD /* credential.json */,
+				10278BC7206231950013AACD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		10278BEB206270D40013AACD /* View・VC */ = {
+			isa = PBXGroup;
+			children = (
+				10278BC2206231950013AACD /* ViewController.swift */,
+				10278BC4206231950013AACD /* Main.storyboard */,
+				10278BC9206231950013AACD /* LaunchScreen.storyboard */,
+			);
+			path = "View・VC";
+			sourceTree = "<group>";
+		};
+		10278BEC206271260013AACD /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				10278BED206271470013AACD /* TKError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +255,7 @@
 			files = (
 				10278BCB206231950013AACD /* LaunchScreen.storyboard in Resources */,
 				10278BC8206231950013AACD /* Assets.xcassets in Resources */,
+				10278BF2206272080013AACD /* credential.json in Resources */,
 				10278BC6206231950013AACD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10278BC3206231950013AACD /* ViewController.swift in Sources */,
+				10278BE5206270140013AACD /* TwitterAPICredential.swift in Sources */,
 				10278BC1206231950013AACD /* AppDelegate.swift in Sources */,
+				10278BE8206270480013AACD /* FileOrganizer.swift in Sources */,
+				10278BE320626FF50013AACD /* DataConvertible.swift in Sources */,
+				10278BEE206271470013AACD /* TKError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10278BF0206271CE0013AACD /* loadCredentialTests.swift in Sources */,
 				10278BD6206231950013AACD /* twitterkitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
