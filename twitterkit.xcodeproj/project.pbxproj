@@ -19,6 +19,8 @@
 		10278BEE206271470013AACD /* TKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BED206271470013AACD /* TKError.swift */; };
 		10278BF0206271CE0013AACD /* loadCredentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10278BEF206271CE0013AACD /* loadCredentialTests.swift */; };
 		10278BF2206272080013AACD /* credential.json in Resources */ = {isa = PBXBuildFile; fileRef = 10278BF1206272080013AACD /* credential.json */; };
+		10278BF7206277CC0013AACD /* TwitterShareExtensionUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10278BF5206277CC0013AACD /* TwitterShareExtensionUI.framework */; };
+		10278BF8206277CC0013AACD /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10278BF6206277CC0013AACD /* TwitterKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		10278BED206271470013AACD /* TKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKError.swift; sourceTree = "<group>"; };
 		10278BEF206271CE0013AACD /* loadCredentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadCredentialTests.swift; sourceTree = "<group>"; };
 		10278BF1206272080013AACD /* credential.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credential.json; sourceTree = "<group>"; };
+		10278BF5206277CC0013AACD /* TwitterShareExtensionUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterShareExtensionUI.framework; path = Carthage/Build/iOS/TwitterShareExtensionUI.framework; sourceTree = "<group>"; };
+		10278BF6206277CC0013AACD /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10278BF7206277CC0013AACD /* TwitterShareExtensionUI.framework in Frameworks */,
+				10278BF8206277CC0013AACD /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,7 @@
 				10278BBF206231950013AACD /* twitterkit */,
 				10278BD4206231950013AACD /* twitterkitTests */,
 				10278BBE206231950013AACD /* Products */,
+				10278BF4206277CC0013AACD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +177,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		10278BF4206277CC0013AACD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10278BF6206277CC0013AACD /* TwitterKit.framework */,
+				10278BF5206277CC0013AACD /* TwitterShareExtensionUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +197,7 @@
 				10278BBA206231950013AACD /* Frameworks */,
 				10278BBB206231950013AACD /* Resources */,
 				10278BF32062747E0013AACD /* ShellScript */,
+				10278BF9206277E40013AACD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -283,6 +300,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		10278BF9206277E40013AACD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterShareExtensionUI.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TwitterCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TwitterKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TwitterShareExtensionUI.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -452,6 +488,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 469GT6P4NA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = twitterkit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.sundaycarpenter.twitterkit;
@@ -467,6 +507,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 469GT6P4NA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = twitterkit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.sundaycarpenter.twitterkit;
